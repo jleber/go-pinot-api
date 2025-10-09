@@ -103,11 +103,11 @@ type FieldIndexBloom struct {
 }
 
 type FieldIndexForward struct {
-	CompressionCodec      string `json:"compressioncodec,omitempty"`
-	DeriveNumDocsPerChunk string `json:"derivenumdocsperchunk,omitempty"`
-	RawIndexWriterVersion string `json:"rawindexwriterversion,omitempty"`
-	TargetDocsPerChunk    string `json:"targetDocsPerChunk,omitempty"`
-	TargetMaxChunkSize    string `json:"targetMaxChunkSize,omitempty"`
+	CompressionCodec      string `json:"compressionCodec,omitempty"`
+	DeriveNumDocsPerChunk bool   `json:"deriveNumDocsPerChunk,omitempty"`
+	RawIndexWriterVersion int64  `json:"rawIndexWriterVersion,omitempty"`
+	TargetDocsPerChunk    int64  `json:"targetDocsPerChunk,omitempty"`
+	TargetMaxChunkSize    int64  `json:"targetMaxChunkSize,omitempty"`
 }
 
 type FieldIndexDictionary struct {
