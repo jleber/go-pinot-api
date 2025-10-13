@@ -167,12 +167,13 @@ type FieldIndexes struct {
 }
 
 type FieldConfig struct {
-	Name            string           `json:"name"`
-	EncodingType    string           `json:"encodingType"`
-	IndexType       string           `json:"indexType,omitempty"`
-	IndexTypes      []string         `json:"indexTypes,omitempty"`
-	TimestampConfig *TimestampConfig `json:"timestampConfig,omitempty"`
-	Indexes         *FieldIndexes    `json:"indexes,omitempty"`
+	Name            string            `json:"name"`
+	EncodingType    string            `json:"encodingType"`
+	IndexType       string            `json:"indexType,omitempty"`
+	IndexTypes      []string          `json:"indexTypes,omitempty"`
+	TimestampConfig *TimestampConfig  `json:"timestampConfig,omitempty"`
+	Indexes         *FieldIndexes     `json:"indexes,omitempty"`
+	Properties      map[string]string `json:"properties"`
 }
 
 type QueryConfig struct {
