@@ -98,16 +98,16 @@ type FieldIndexInverted struct {
 
 type FieldIndexBloom struct {
 	Fpp            string `json:"fpp,omitempty"`
-	MaxSizeInBytes string `json:"maxsizeinbytes,omitempty"`
-	LoadOnHeap     string `json:"loadonheap,omitempty"`
+	MaxSizeInBytes string `json:"maxSizeInBytes,omitempty"`
+	LoadOnHeap     string `json:"loadOnHeap,omitempty"`
 }
 
 type FieldIndexForward struct {
-	CompressionCodec      string `json:"compressioncodec,omitempty"`
-	DeriveNumDocsPerChunk string `json:"derivenumdocsperchunk,omitempty"`
-	RawIndexWriterVersion string `json:"rawindexwriterversion,omitempty"`
-	TargetDocsPerChunk    string `json:"targetDocsPerChunk,omitempty"`
-	TargetMaxChunkSize    string `json:"targetMaxChunkSize,omitempty"`
+	CompressionCodec      string `json:"compressionCodec,omitempty"`
+	DeriveNumDocsPerChunk *bool  `json:"deriveNumDocsPerChunk,omitempty"`
+	RawIndexWriterVersion int64  `json:"rawIndexWriterVersion,omitempty"`
+	TargetDocsPerChunk    int64  `json:"targetDocsPerChunk,omitempty"`
+	TargetMaxChunkSize    int64  `json:"targetMaxChunkSize,omitempty"`
 }
 
 type FieldIndexDictionary struct {
@@ -127,13 +127,13 @@ type FieldIndexTimestamp struct {
 }
 
 type FieldIndexJson struct {
-	MaxLevels               string `json:"maxlevels,omitempty"`
-	ExcludeArray            bool   `json:"excludearray,omitempty"`
-	DisableCrossArrayUnnest bool   `json:"disablecrossarrayunnest,omitempty"`
-	IncludePaths            string `json:"includepaths,omitempty"`
-	ExcludePaths            string `json:"excludepaths,omitempty"`
-	ExcludeFields           string `json:"excludefields,omitempty"`
-	IndexPaths              string `json:"indexpaths,omitempty"`
+	MaxLevels               string `json:"maxLevels,omitempty"`
+	ExcludeArray            bool   `json:"excludeArray,omitempty"`
+	DisableCrossArrayUnnest bool   `json:"disableCrossArrayUnnest,omitempty"`
+	IncludePaths            string `json:"includePaths,omitempty"`
+	ExcludePaths            string `json:"excludePaths,omitempty"`
+	ExcludeFields           string `json:"excludeFields,omitempty"`
+	IndexPaths              string `json:"indexPaths,omitempty"`
 }
 
 type FieldIndexRange struct {
@@ -141,14 +141,14 @@ type FieldIndexRange struct {
 }
 
 type FieldIndexText struct {
-	StopWordInclude []string `json:"stopwordinclude,omitempty"`
-	StopWordExclude []string `json:"stopwordexclude,omitempty"`
+	StopWordInclude []string `json:"stopWordInclude,omitempty"`
+	StopWordExclude []string `json:"stopWordExclude,omitempty"`
 }
 
 type FieldIndexVector struct {
-	VectorIndexType        string `json:"vectorindextype,omitempty"`
-	VectorDimension        string `json:"vectordimension,omitempty"`
-	VectorDistanceFunction string `json:"vectordistancefunction,omitempty"`
+	VectorIndexType        string `json:"vectorIndexType,omitempty"`
+	VectorDimension        string `json:"vectorDimension,omitempty"`
+	VectorDistanceFunction string `json:"vectorDistanceFunction,omitempty"`
 	Version                string `json:"version,omitempty"`
 }
 
@@ -167,12 +167,13 @@ type FieldIndexes struct {
 }
 
 type FieldConfig struct {
-	Name            string           `json:"name"`
-	EncodingType    string           `json:"encodingType"`
-	IndexType       string           `json:"indexType,omitempty"`
-	IndexTypes      []string         `json:"indexTypes,omitempty"`
-	TimestampConfig *TimestampConfig `json:"timestampConfig,omitempty"`
-	Indexes         *FieldIndexes    `json:"indexes,omitempty"`
+	Name            string            `json:"name"`
+	EncodingType    string            `json:"encodingType"`
+	IndexType       string            `json:"indexType,omitempty"`
+	IndexTypes      []string          `json:"indexTypes,omitempty"`
+	TimestampConfig *TimestampConfig  `json:"timestampConfig,omitempty"`
+	Indexes         *FieldIndexes     `json:"indexes,omitempty"`
+	Properties      map[string]string `json:"properties"`
 }
 
 type QueryConfig struct {
