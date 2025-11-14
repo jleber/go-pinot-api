@@ -213,8 +213,10 @@ type UpsertConfig struct {
 }
 
 type DedupConfig struct {
-	DedupEnabled bool   `json:"dedupEnabled"`
-	HashFunction string `json:"hashFunction"`
+	DedupEnabled    bool    `json:"dedupEnabled"`
+	HashFunction    string  `json:"hashFunction"`
+	DedupTimeColumn string  `json:"dedupTimeColumn"`
+	MetadataTTL     float64 `json:"metadataTTL"`
 }
 
 type TransformConfig struct {
