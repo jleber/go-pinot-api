@@ -287,6 +287,9 @@ type StreamConfig struct {
 	StreamKafkaDecoderPropSchemaRegistryBasicAuthCredentialsSource   string `json:"stream.kafka.decoder.prop.schema.registry.basic.auth.credentials.source,omitempty"`
 	StreamKafkaDecoderPropSchemaRegistryRestUrl                      string `json:"stream.kafka.decoder.prop.schema.registry.rest.url,omitempty"`
 	StreamKafkaDecoderPropSchemaRegistrySchemaName                   string `json:"stream.kafka.decoder.prop.schema.registry.schema.name,omitempty"`
+	StreamKafkaDecoderPropSchemaRegistryMaxRetries                   string `json:"stream.kafka.decoder.prop.schema.registry.max.retries,omitempty"`
+	StreamKafkaDecoderPropSchemaRegistryRetriesMaxWaitMs             string `json:"stream.kafka.decoder.prop.schema.registry.retries.max.wait.ms,omitempty"`
+	StreamKafkaDecoderPropSchemaRegistryRetriesMaxWait               string `json:"stream.kafka.decoder.prop.schema.registry.retries.wait.ms,omitempty"`
 	StreamKafkaDecoderPropSchemaRegistrySslKeystoreLocation          string `json:"stream.kafka.decoder.prop.schema.registry.ssl.keystore.location,omitempty"`
 	StreamKafkaDecoderPropSchemaRegistrySslKeystorePassword          string `json:"stream.kafka.decoder.prop.schema.registry.ssl.keystore.password,omitempty"`
 	StreamKafkaDecoderPropSchemaRegistrySslKeystoreType              string `json:"stream.kafka.decoder.prop.schema.registry.ssl.keystore.type,omitempty"`
